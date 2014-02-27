@@ -2,3 +2,14 @@
   <h1>Get the top stories on CNN</h1>
 
 </div>
+
+<% if @links && @articles %>
+  <ul>
+    <% @links.zip(@articles).each do |link,article| %>
+      <div class="alert alert-success">
+       <%= link_to "Article Link","#{link}" %>
+      <%= article %>
+      </div>
+    <% end %>
+  </ul>
+<% end %>
